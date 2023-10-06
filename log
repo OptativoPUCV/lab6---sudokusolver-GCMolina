@@ -42,3 +42,14 @@ Fri 06 Oct 2023 03:39:22 PM UTC:
  tests:  3|4
 total_score: 20/70
 e7fd246
+Fri 06 Oct 2023 03:40:45 PM UTC: 
+ sudoku.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:92:21: error: unused variable ‘Adyacentee’ [-Werror=unused-variable]
+   92 |               Node* Adyacentee=copy(n);
+      |                     ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+8d16e24
