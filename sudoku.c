@@ -93,7 +93,8 @@ List* get_adj_nodes(Node* n){
               pushBack(list, Adyacentee);
             }
           }
-          
+          n->sudo[fila][columna]=0;
+          return list;
         }
       }
     }
