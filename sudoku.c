@@ -57,7 +57,7 @@ List* get_adj_nodes(Node* n){
       int num = 1;
       for (columna=0;columna<9;columna ++){
         if(n->sudo[fila][columna]==0){
-          
+          num=1+num;
           
         }
       }
