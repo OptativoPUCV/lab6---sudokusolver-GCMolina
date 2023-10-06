@@ -72,6 +72,8 @@ for(int i= 0;i<9;i++){
       
     }
   }
+  int i =4;
+  int arreglo[10]={0};
 
   
     return 1;
