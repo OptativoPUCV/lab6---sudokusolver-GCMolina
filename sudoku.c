@@ -90,6 +90,7 @@ List* get_adj_nodes(Node* n){
             n->sudo[fila][columna]=num;
             if(is_valid(n)){
               Node* Adyacentee=copy(n);
+              pushBack(list, Adyacentee);
             }
           }
           
