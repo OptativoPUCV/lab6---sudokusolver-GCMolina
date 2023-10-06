@@ -106,7 +106,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  return 1;
+  return 0;
 }
 
 

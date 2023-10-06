@@ -70,3 +70,9 @@ sudoku.c:109:10: error: returning ‘int’ from a function with return type ‘
 cc1: all warnings being treated as errors
 Compilation failed
 e310548
+Fri 06 Oct 2023 04:49:26 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|3
+total_score: 35/70
+8b4fbfb
