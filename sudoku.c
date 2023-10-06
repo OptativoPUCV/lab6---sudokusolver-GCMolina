@@ -72,7 +72,6 @@ for(int i= 0;i<9;i++){
       
     }
   }
-  int i =4;
   int arreglo[10]={0};
   for(int j =0;j<9;j++){
     int h=3*(i/3)+(j/3);

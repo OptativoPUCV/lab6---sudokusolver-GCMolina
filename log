@@ -108,3 +108,14 @@ Fri 06 Oct 2023 05:25:56 PM UTC:
  tests:  5|3
 total_score: 35/70
 22e31c0
+Fri 06 Oct 2023 08:35:31 PM UTC: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:77:14: error: ‘i’ undeclared (first use in this function)
+   77 |     int h=3*(i/3)+(j/3);
+      |              ^
+sudoku.c:77:14: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+3858f55
