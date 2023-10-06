@@ -44,7 +44,36 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
+  for(int i= 0;i<9;i++){
+    int arreglo[10]={0};
+    for(int j=0;j<9;j++){
+      int lugar = n->sudo[i][j];
+      if(lugar!=0){
+        if (arreglo[lugar]==0){
+          arreglo[lugar]=1;
+        }else{
+          return 0;
+        }
+      }
+      
+    }
+  }
+for(int i= 0;i<9;i++){
+    int arreglo[10]={0};
+    for(int j=0;j<9;j++){
+      int lugarco = n->sudo[i][j];
+      if(lugarco!=0){
+        if (arreglo[lugarco]==0){
+          arreglo[lugarco]=1;
+        }else{
+          return 0;
+        }
+      }
+      
+    }
+  }
+int i=4;
+  
     return 1;
 }
 
