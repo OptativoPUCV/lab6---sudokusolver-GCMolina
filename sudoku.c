@@ -142,11 +142,21 @@ Node* DFS(Node* initial, int* cont){
       return node;
     }
     List*adyacente=get_adj_nodes(node);
+    Node*aux=first(adyacente);
+    while(aux!=NULL){
+      push(s, aux);
+      aux=next(adyacente);
+      (*cont)++;
+      *cont=*cont+1;
+    }
+    (*cont)++;
+    free(node);
     
   }
+  if(*cont==0)return NULL;
+  free(initial);
     
     
-  }
   return NULL;
 }
 
