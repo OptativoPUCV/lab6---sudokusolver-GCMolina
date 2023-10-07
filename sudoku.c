@@ -74,7 +74,7 @@ for(int i= 0;i<9;i++){
   }
 
 for(int k = 0 ; k<3; k++ ){ 
-    int array[10] = {0};  
+    int arreglo[10] = {0};  
     for(int p=0;p<9;p++){
         int i=3*(k/3) + (p/3) ;
         int j=3*(k%3) + (p%3) ;
