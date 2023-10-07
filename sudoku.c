@@ -97,7 +97,7 @@ List* get_adj_nodes(Node* n){
   int fila;
     int columna;
     for(fila=0;fila<9;fila++){
-      int num;
+      int num=1;
       for (columna=0;columna<9;columna ++){
         if(n->sudo[fila][columna]==0){
           for(num=1;num<10;num++){
@@ -119,7 +119,7 @@ List* get_adj_nodes(Node* n){
 int is_final(Node* n){
   for(int i=0;i<9;i++){
     for (int j=0;j<9;j++){
-      if(n->sudo[i][j]==0){
+      if((n->sudo[i][j])==0){
         return 0;
       }
     }
