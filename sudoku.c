@@ -129,6 +129,24 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  Stack *s=createStack();
+  if(s==NULL)return NULL;
+  *cont=1;
+  push(s, initial);
+  while(get_size(s)!=0){
+    Node* node=top(s);
+    pop(s);
+    *cont=*cont-1;
+    (*cont)--;
+    if(is_final(node)==1){
+      return node;
+    }
+    List*adyacente=get_adj_nodes(node);
+    
+  }
+    
+    
+  }
   return NULL;
 }
 
