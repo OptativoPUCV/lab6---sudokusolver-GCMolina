@@ -150,13 +150,10 @@ Node* DFS(Node* initial, int* cont){
       *cont=*cont+1;
     }
     (*cont)++;
-    free(node);
     
   }
   if(*cont==0)return NULL;
   free(initial);
-    
-    
   return NULL;
 }
 
