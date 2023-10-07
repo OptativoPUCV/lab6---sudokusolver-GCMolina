@@ -207,3 +207,18 @@ Sat 07 Oct 2023 02:22:09 AM UTC:
  tests:  8|1
 total_score: 60/70
 a34e6d6
+Sat 07 Oct 2023 02:25:40 AM UTC: 
+ sudoku.c | 87 ++++++++++++++--------------------------------------------------
+ 1 file changed, 18 insertions(+), 69 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:84:12: error: ‘arreglo’ undeclared (first use in this function)
+   84 |         if(arreglo[matriz] == 0){
+      |            ^~~~~~~
+sudoku.c:84:12: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:77:9: error: unused variable ‘array’ [-Werror=unused-variable]
+   77 |     int array[10] = {0};
+      |         ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+362cd3e

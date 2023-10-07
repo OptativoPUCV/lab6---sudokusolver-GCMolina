@@ -73,21 +73,20 @@ for(int i= 0;i<9;i++){
     }
   }
 
-  for (int i=0;i<3;i++){
-  int arreglo[10]={0};
-    for(int j =0;j<9;j++){
-      int h=3*(i/3)+(j/3);
-      int k=3*(i%3)+(j%3);
-      int matriz=n->sudo[k][h];
-      if (matriz != 0){
-        if (arreglo[matriz]==0){
-          arreglo[matriz]=1;
-        }else{
-        return 0;
-      }
+for(int k = 0 ; k<3; k++ ){ 
+    int array[10] = {0};  
+    for(int p=0;p<9;p++){
+        int i=3*(k/3) + (p/3) ;
+        int j=3*(k%3) + (p%3) ;
+        
+      int matriz = n->sudo[j][i]; 
+      if(matriz != 0){
+        if(arreglo[matriz] == 0){
+          arreglo[matriz] = 1;
+        }
+        else return 0;
+      }    
     }
-  }
-
   }
     return 1;
 }
@@ -129,90 +128,38 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-
-  Stack *s = createStack();  
-  if(s==NULL)return NULL; 
-  *cont = 1; 
-  push(s, initial); 
-
+  Stack *s=createStack();
+  if(s==NULL)return NULL;
+  *cont=1;
+  push(s, initial);
   while(get_size(s)!=0){
-    Node* node = top(s); 
-    pop(s); 
-    *cont = *cont-1;
-    (*cont)--; 
-    if(is_final(node)==1)return node; 
-
-    List* adyN = get_adj_nodes(node);
-    //if(adyN == NULL)return NULL; 
-    
-    Node * aux = first(adyN); 
-    //if(aux==NULL)return NULL; 
-
-    while(aux!=NULL){
-      push(s,aux);
-      aux= next(adyN); 
-      (*cont)++; 
-      *cont = *cont +1; 
+    Node* node=top(s);
+    pop(s);
+    *cont=*cont-1;
+    (*cont)--;
+    if(is_final(node)==1){
+      return node;
     }
-    (*cont)++; 
-    free(node); 
+    List*adyacente=get_adj_nodes(node);
+    Node*aux=first(adyacente);
+    while(aux!=NULL){
+      push(s, aux);
+      aux=next(adyacente);
+      (*cont)++;
+      *cont=*cont+1;
+    }
+    (*cont)++;
+    
   }
-  if(*cont == 0) return NULL;
+  if(*cont==0)return NULL;
   free(initial);
-  
-  //1crear stack S e insertar nodo 
-
-  //Stack* s = createStack(); 
-  //if(s == NULL)return NULL; 
-  //(*cont) =1; 
-  //if() 
-  //push(s, initial); 
-
-  //2while stack!=0
-  //sacar y eliminar el primer nodo de S 
-  //verificar if is_final -> retornar nodo
-  //obtener la lista de get_adj_nodes
-  //agregar los nodods de la lista 1 por 1 al stack 
-  //liberar memoria usada por el nodo
-  
-  //while((get_size(s)) != 0){
-    //Node* node = top(s); //sacar primer nodo
-    //pop(s);  //eliminar primer nodo
-    //(*cont)--;
-
-    //if((is_final(node))==1)return node; 
-    /*{
-      free(s); 
-      return node; 
-    }*/
-
-    //OBTENER LISTA NODOD ADY
-    //List* adyNodes = get_adj_nodes(node); 
-    /*if(adyNodes==NULL)
-    {
-      free(s);
-      return NULL;
-    }*/
-   //Node* aux = first(adyNodes); 
-
-    //while(aux != NULL){
-      //push(s, aux); 
-      //aux = next(adyNodes); 
-      //(*cont)++;
-    //}
-    //(*cont)++;
-    //free(node);  
-  //}
-  //3 si se termina de recorrer el grafo sin encontrar solución return NULL
-
-  //en la variable cont almacenar iteraciones que realiz allgoritmo
-  //free(initial);
-  //return initial;
-  return NULL; 
+  return NULL;
 }
 
 
-/*int main( int argc, char *argv[] ){
+
+/*
+int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
 
